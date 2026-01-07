@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8r75klegk6cb"]
+[gd_scene load_steps=4 format=3 uid="uid://c8r75klegk6cb"]
+
+[ext_resource type="Script" uid="uid://dxharco1gom8g" path="res://cube_mesh.gd" id="1_axdbb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1j2el"]
 
@@ -11,6 +13,7 @@ height = 3.0
 [node name="CubeMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5456934, 0.7352325, 0.40205964, -0.8029944, 0.59598666, 0, -0.23962219, -0.32285163, 0.9156135, -1.4470509, 0.3900606, -2.732854)
 mesh = SubResource("BoxMesh_1j2el")
+script = ExtResource("1_axdbb")
 
 [node name="SphereMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8276719, -0.67861223, -2.206048)
