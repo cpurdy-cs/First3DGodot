@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcxmapxggceix"]
+
+[ext_resource type="PackedScene" uid="uid://c8r75klegk6cb" path="res://pair_of_meshes.tscn" id="1_u52ul"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u52ul"]
+sky_top_color = Color(0.31311786, 0.61795336, 1, 1)
+sky_horizon_color = Color(1.92523e-07, 0.54865265, 0.3725886, 1)
+ground_bottom_color = Color(0.19567648, 0.36597413, 0.18125159, 1)
+ground_horizon_color = Color(0.98368734, 0.60246, 0.40150476, 1)
+sun_angle_max = 66.45
+
+[sub_resource type="Sky" id="Sky_vonw3"]
+sky_material = SubResource("ProceduralSkyMaterial_u52ul")
+
+[sub_resource type="Environment" id="Environment_oi3di"]
+background_mode = 2
+sky = SubResource("Sky_vonw3")
+ambient_light_color = Color(0, 0.65882355, 0, 1)
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oi3di")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.41158313, 0.9012749, 0.13528845, -0.28390032, 0.014267445, -0.9587477, 0, 0, 0)
+light_color = Color(1, 1, 0.44313726, 1)
+
+[node name="PairOfMeshes" parent="." instance=ExtResource("1_u52ul")]
+
+[node name="PairOfMeshes2" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2657275, -2.3180556, -3.8009138)
+
+[node name="PairOfMeshes3" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(1, 0, 0, 0, 0.67848027, -0.7346186, 0, 0.7346186, 0.67848027, 5.8154097, 0, -3.8009138)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9992789, 0.037969247, 0, -0.037969247, 0.9992789, 0, 0, 1.8888625)
